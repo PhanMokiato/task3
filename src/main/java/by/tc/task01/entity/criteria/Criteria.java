@@ -20,4 +20,7 @@ public class Criteria {
 		criteria.put(searchCriteria, value);
 	}
 
+	public Map<String, Object> getCriteria() {
+		return criteria;
+	}
 }

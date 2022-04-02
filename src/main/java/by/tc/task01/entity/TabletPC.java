@@ -1,51 +1,57 @@
 package by.tc.task01.entity;
 
 public class TabletPC extends Appliance{
-	private String batteryCapacity = null;
-	private String displayInches = null;
-	private String memoryRom = null;
-	private String flashMemory = null;
+	private Double batteryCapacity = null;
+	private Double displayInches = null;
+	private Double memoryRom = null;
+	private Double flashMemory = null;
 	private String color = null;
 
     public TabletPC() {}
 
-    public String getBatteryCapacity() {
+    public Double getBatteryCapacity() {
         return batteryCapacity;
     }
 
-    public void setBatteryCapacity(String batteryCapacity) {
-        this.batteryCapacity = batteryCapacity;
-    }
-
-    public String getDisplayInches() {
+    public Double getDisplayInches() {
         return displayInches;
     }
 
-    public void setDisplayInches(String displayInches) {
-        this.displayInches = displayInches;
-    }
-
-    public String getMemoryRom() {
+    public Double getMemoryRom() {
         return memoryRom;
     }
 
-    public void setMemoryRom(String memoryRom) {
-        this.memoryRom = memoryRom;
-    }
-
-    public String getFlashMemory() {
+    public Double getFlashMemory() {
         return flashMemory;
-    }
-
-    public void setFlashMemory(String flashMemory) {
-        this.flashMemory = flashMemory;
     }
 
     public String getColor() {
         return color;
     }
 
-    public void setColor(String color) {
-        this.color = color;
+    @Override
+    public void assignCharacteristic(String cr, Object value) {
+        switch(cr) {
+            case "BATTERY_CAPACITY":{
+                batteryCapacity = (Double) value;
+                break;
+            }
+            case "COLOR": {
+                color = (String) value;
+                break;
+            }
+            case "MEMORY_ROM": {
+                memoryRom = (Double) value;
+                break;
+            }
+            case "FLASH_MEMORY_CAPACITY": {
+                flashMemory = (Double) value;
+                break;
+            }
+            case "DISPLAY_INCHS": {
+                displayInches = (Double) value;
+                break;
+            }
+        }
     }
 }

@@ -1,60 +1,66 @@
 package by.tc.task01.entity;
 
 public class Laptop extends Appliance{
-	private String batteryCapacity = null;
+	private Double batteryCapacity;
     private String os = null;
-    private String memoryRom = null;
-    private String systemMemory = null;
-    private String cpu = null;
-    private String displayInches = null;
+    private Double memoryRom;
+    private Double systemMemory;
+    private Double cpu;
+    private Double displayInches;
 
     public Laptop() {}
 
-    public String getBatteryCapacity() {
-        return batteryCapacity;
+    public Double getDisplayInches() {
+        return displayInches;
     }
 
-    public void setBatteryCapacity(String batteryCapacity) {
-        this.batteryCapacity = batteryCapacity;
+    public Double getCpu() {
+        return cpu;
+    }
+
+    public Double getSystemMemory() {
+        return systemMemory;
+    }
+
+    public Double getMemoryRom() {
+        return memoryRom;
     }
 
     public String getOs() {
         return os;
     }
 
-    public void setOs(String os) {
-        this.os = os;
+    public Double getBatteryCapacity() {
+        return batteryCapacity;
     }
 
-    public String getMemoryRom() {
-        return memoryRom;
-    }
-
-    public void setMemoryRom(String memoryRom) {
-        this.memoryRom = memoryRom;
-    }
-
-    public String getSystemMemory() {
-        return systemMemory;
-    }
-
-    public void setSystemMemory(String systemMemory) {
-        this.systemMemory = systemMemory;
-    }
-
-    public String getCpu() {
-        return cpu;
-    }
-
-    public void setCpu(String cpu) {
-        this.cpu = cpu;
-    }
-
-    public String getDisplayInches() {
-        return displayInches;
-    }
-
-    public void setDisplayInches(String displayInches) {
-        this.displayInches = displayInches;
+    @Override
+    public void assignCharacteristic(String cr, Object value) {
+        switch(cr) {
+            case "BATTERY_CAPACITY":{
+                batteryCapacity = (Double) value;
+                break;
+            }
+            case "OS": {
+                os = (String) value;
+                break;
+            }
+            case "MEMORY_ROM": {
+                memoryRom = (Double) value;
+                break;
+            }
+            case "SYSTEM_MEMORY": {
+                systemMemory = (Double) value;
+                break;
+            }
+            case "CPU": {
+                cpu = (Double) value;
+                break;
+            }
+            case "DISPLAY_INCHS": {
+                displayInches = (Double) value;
+                break;
+            }
+        }
     }
 }

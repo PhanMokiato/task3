@@ -1,60 +1,66 @@
 package by.tc.task01.entity;
 
 public class Oven extends Appliance{
-    private String powerConsumption = null;
-    private String weight = null;
-    private String capacity = null;
-    private String depth = null;
-    private String height = null;
-    private String width = null;
+    private Double powerConsumption = null;
+    private Double weight = null;
+    private Double capacity = null;
+    private Double depth = null;
+    private Double height = null;
+    private Double width = null;
 
     public Oven() {}
 
-    public String getPowerConsumption() {
+    public Double getPowerConsumption() {
         return powerConsumption;
     }
 
-    public void setPowerConsumption(String powerConsumption) {
-        this.powerConsumption = powerConsumption;
-    }
-
-    public String getWeight() {
+    public Double getWeight() {
         return weight;
     }
 
-    public void setWeight(String weight) {
-        this.weight = weight;
-    }
-
-    public String getCapacity() {
+    public Double getCapacity() {
         return capacity;
     }
 
-    public void setCapacity(String capacity) {
-        this.capacity = capacity;
-    }
-
-    public String getDepth() {
+    public Double getDepth() {
         return depth;
     }
 
-    public void setDepth(String depth) {
-        this.depth = depth;
-    }
-
-    public String getHeight() {
+    public Double getHeight() {
         return height;
     }
 
-    public void setHeight(String height) {
-        this.height = height;
-    }
-
-    public String getWidth() {
+    public Double getWidth() {
         return width;
     }
 
-    public void setWidth(String width) {
-        this.width = width;
+    @Override
+    public void assignCharacteristic(String cr, Object value) {
+        switch (cr) {
+            case "POWER_CONSUMPTION": {
+                powerConsumption = (Double) value;
+                break;
+            }
+            case "WEIGHT": {
+                weight = (Double) value;
+                break;
+            }
+            case "CAPACITY": {
+                capacity = (Double) value;
+                break;
+            }
+            case "DEPTH": {
+                depth = (Double) value;
+                break;
+            }
+            case "HEIGHT": {
+                height = (Double) value;
+                break;
+            }
+            case "WIDTH": {
+                width = (Double) value;
+                break;
+            }
+        }
     }
 }

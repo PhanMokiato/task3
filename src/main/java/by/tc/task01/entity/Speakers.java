@@ -1,42 +1,48 @@
 package by.tc.task01.entity;
 
 public class Speakers extends Appliance{
-	private String powerConsumption = null;
-	private String numberSpeakers = null;
-	private String frequencyRange = null;
-	private String cordLength = null;
+	private Double powerConsumption = null;
+	private Double numberSpeakers = null;
+	private Double frequencyRange = null;
+	private Double cordLength = null;
 
     public Speakers() {}
 
-    public String getPowerConsumption() {
+    public Double getPowerConsumption() {
         return powerConsumption;
     }
 
-    public void setPowerConsumption(String powerConsumption) {
-        this.powerConsumption = powerConsumption;
-    }
-
-    public String getNumberSpeakers() {
+    public Double getNumberSpeakers() {
         return numberSpeakers;
     }
 
-    public void setNumberSpeakers(String numberSpeakers) {
-        this.numberSpeakers = numberSpeakers;
-    }
-
-    public String getFrequencyRange() {
+    public Double getFrequencyRange() {
         return frequencyRange;
     }
 
-    public void setFrequencyRange(String frequencyRange) {
-        this.frequencyRange = frequencyRange;
-    }
-
-    public String getCordLength() {
+    public Double getCordLength() {
         return cordLength;
     }
 
-    public void setCordLength(String cordLength) {
-        this.cordLength = cordLength;
+    @Override
+    public void assignCharacteristic(String cr, Object value) {
+        switch (cr) {
+            case "POWER_CONSUMPTION": {
+                powerConsumption = (Double) value;
+                break;
+            }
+            case "NUMBER_OF_SPEAKERS": {
+                numberSpeakers = (Double) value;
+                break;
+            }
+            case "FREQUENCY_RANGE": {
+                frequencyRange = (Double) value;
+                break;
+            }
+            case "CORD_LENGTH": {
+                cordLength = (Double) value;
+                break;
+            }
+        }
     }
 }

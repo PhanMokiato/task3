@@ -1,60 +1,66 @@
 package by.tc.task01.entity;
 
 public class Refrigerator extends Appliance{
-	private String powerConsumption = null;
-	private String weight = null;
-	private String freezerCapacity = null;
-	private String overallCapacity = null;
-	private String height = null;
-	private String width = null;
+	private Double powerConsumption = null;
+	private Double weight = null;
+	private Double freezerCapacity = null;
+	private Double overallCapacity = null;
+	private Double height = null;
+	private Double width = null;
 
     public Refrigerator() {}
 
-    public String getPowerConsumption() {
+    public Double getPowerConsumption() {
         return powerConsumption;
     }
 
-    public void setPowerConsumption(String powerConsumption) {
-        this.powerConsumption = powerConsumption;
-    }
-
-    public String getWeight() {
+    public Double getWeight() {
         return weight;
     }
 
-    public void setWeight(String weight) {
-        this.weight = weight;
-    }
-
-    public String getFreezerCapacity() {
+    public Double getFreezerCapacity() {
         return freezerCapacity;
     }
 
-    public void setFreezerCapacity(String freezerCapacity) {
-        this.freezerCapacity = freezerCapacity;
-    }
-
-    public String getOverallCapacity() {
+    public Double getOverallCapacity() {
         return overallCapacity;
     }
 
-    public void setOverallCapacity(String overallCapacity) {
-        this.overallCapacity = overallCapacity;
-    }
-
-    public String getHeight() {
+    public Double getHeight() {
         return height;
     }
 
-    public void setHeight(String height) {
-        this.height = height;
-    }
-
-    public String getWidth() {
+    public Double getWidth() {
         return width;
     }
 
-    public void setWidth(String width) {
-        this.width = width;
+    @Override
+    public void assignCharacteristic(String cr, Object value) {
+        switch (cr) {
+            case "POWER_CONSUMPTION": {
+                powerConsumption = (Double) value;
+                break;
+            }
+            case "WEIGHT": {
+                weight = (Double) value;
+                break;
+            }
+            case "FREEZER_CAPACITY": {
+                freezerCapacity = (Double) value;
+                break;
+            }
+            case "OVERALL_CAPACITY": {
+                overallCapacity = (Double) value;
+                break;
+            }
+            case "HEIGHT": {
+                height = (Double) value;
+                break;
+            }
+            case "WIDTH": {
+                width = (Double) value;
+                break;
+            }
+        }
     }
 }
